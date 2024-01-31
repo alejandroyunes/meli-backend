@@ -1,5 +1,5 @@
 {
-  "name": "vanguardia-express",
+  "name": "meliexpress",
   "version": "1.2.0",
   "description": "express.js API with Typescript",
   "main": "src/index.ts",
@@ -19,6 +19,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.6.7",
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
@@ -44,6 +45,7 @@
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "<5.1.0"
   }
 }

@@ -3,10 +3,12 @@ import morgan from 'morgan'
 import helmet from 'helmet'
 import cors from 'cors'
 import dotenv from 'dotenv';
+import getProducts from "./api/getProducts/getProducts";
 
 import * as middlewares from './middlewares'
 import api from './api'
 import MessageResponse from './interfaces/MessageResponse'
+import getProductById from './api/getProductById';
 
 const app = express()
 
@@ -15,7 +17,7 @@ app.use(helmet())
 app.use(express.json())
 
 const corsOptions = {
-  origin: ['http://localhost:5000'],
+  origin: ['http://localhost:5173'],
   methods: 'POST',
 };
 
@@ -38,6 +40,9 @@ app.post('/contacto', async (req, res) => {
 })
 
 app.use('/api/v1', api)
+
+app.get('/api/items', getProducts);
+app.get("/api/items/:id", getProductById);
 
 app.use(middlewares.notFound)
 app.use(middlewares.errorHandler)
